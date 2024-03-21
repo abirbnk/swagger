@@ -9,8 +9,12 @@
     <pre id="yaml-content"></pre>
 
     <script>
-        // Fetch YAML file content from GitHub
-        fetch('https://raw.githubusercontent.com/your_repo/your_file.yml')
+        // Fetch YAML file content from the same repository
+        const repoUrl = 'https://raw.githubusercontent.com/your_username/your_repo/main/';
+        const yamlFile = 'API.yml';
+        const yamlUrl = repoUrl + yamlFile;
+
+        fetch(yamlUrl)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -27,3 +31,4 @@
     </script>
 </body>
 </html>
+
